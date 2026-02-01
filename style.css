@@ -12,23 +12,21 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh; /* Changed from height to min-height */
     margin: 0;
     text-align: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 80px;
+    padding: 20px 20px 100px 20px; /* Added bottom padding for footer */
     box-sizing: border-box;
 }
 
 h1 {
-    font-size: clamp(1.8rem, 8vw, 3rem); /* Much bigger on mobile */
+    font-size: clamp(3.6rem, 16vw, 6rem); /* DOUBLED */
     font-weight: 400;
     margin-bottom: 2rem;
 }
 
 h2 {
-    font-size: clamp(0.9rem, 4vw, 1.1rem); /* Readable on small screens */
+    font-size: clamp(1.8rem, 8vw, 2.2rem); /* DOUBLED */
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: #282C34;
@@ -36,11 +34,11 @@ h2 {
 }
 
 button {
-    font-size: clamp(1rem, 5vw, 1.1rem); /* Larger tap targets */
+    font-size: clamp(2rem, 10vw, 2.2rem); /* DOUBLED */
     background-color: #282C34;
     color: #FFFFFF;
     border: none;
-    padding: 14px 28px; /* Bigger padding for easier tapping */
+    padding: 28px 56px; /* DOUBLED */
     font-family: 'Lato', sans-serif;
     font-weight: 300;
     border-radius: 8px;
@@ -53,33 +51,10 @@ button:hover {
 }
 
 #output {
-    font-size: clamp(1rem, 5vw, 1.25rem); /* Much more readable */
+    font-size: clamp(2rem, 10vw, 2.5rem); /* DOUBLED */
     margin-top: 2rem;
-    padding: 1.5rem;
+    padding: 3rem; /* DOUBLED */
     max-width: 500px;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 32px 0 rgba(40, 44, 52, 0.1);
-    line-height: 1.7; /* More breathing room between lines */
-    display: none;
-}
-
-#output:not(:empty) {
-    display: block;
-}
-
-.button-group {
-    margin-top: 1.5rem;
-    display: none;
-    gap: 12px;
-    justify-content: center;
-}
-
-#generateAgain,
-#copyBtn {
-    font-family: 'Lato', sans-serif;
-    font-size: clamp(0.9rem, 4vw, 1rem); /* Bigger for accessibility */
-    padding: 10px 20px; /* More padding for
+    backdrop-fi
