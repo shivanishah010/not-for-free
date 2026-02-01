@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 
+html {
+    font-size: 18px;
+}
+
 body {
     font-family: 'Lato', sans-serif;
     background-color: #BAA1A7;
@@ -14,13 +18,13 @@ body {
 }
 
 h1 {
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-size: clamp(2rem, 6vw, 3rem);
     font-weight: 400;
     margin-bottom: 2rem;
 }
 
 h2 {
-    font-size: clamp(0.85rem, 3vw, 0.9rem);
+    font-size: clamp(1rem, 4vw, 1.1rem);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: #282C34;
@@ -28,7 +32,7 @@ h2 {
 }
 
 button {
-    font-size: clamp(0.9rem, 4vw, 1rem);
+    font-size: clamp(1rem, 4.5vw, 1.1rem);
     background-color: #282C34;
     color: #FFFFFF;
     border: none;
@@ -45,7 +49,7 @@ button:hover {
 }
 
 #output {
-    font-size: clamp(0.95rem, 4vw, 1.1rem);
+     font-size: clamp(1.1rem, 4.5vw, 1.25rem);
     margin-top: 2rem;
     padding: 2rem;
     max-width: 500px;
