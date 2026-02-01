@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 
 html {
-    font-size: 18px;
+    font-size: 16px; /* Reset to standard 16px base */
 }
 
 body {
@@ -12,21 +12,23 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Changed from height to min-height */
+    min-height: 100vh;
     margin: 0;
     text-align: center;
-    padding: 20px 20px 100px 20px; /* Added bottom padding for footer */
+    padding: 20px;
     box-sizing: border-box;
 }
 
+/* --- DESKTOP STYLES (The "Fine" Version) --- */
+
 h1 {
-    font-size: clamp(3.6rem, 16vw, 6rem); /* DOUBLED */
+    font-size: 3rem; 
     font-weight: 400;
     margin-bottom: 2rem;
 }
 
 h2 {
-    font-size: clamp(1.8rem, 8vw, 2.2rem); /* DOUBLED */
+    font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: #282C34;
@@ -34,14 +36,14 @@ h2 {
 }
 
 button {
-    font-size: clamp(2rem, 10vw, 2.2rem); /* DOUBLED */
+    font-size: 1rem;
     background-color: #282C34;
     color: #FFFFFF;
     border: none;
-    padding: 28px 56px; /* DOUBLED */
+    padding: 12px 24px;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
-    border-radius: 8px;
+    border-radius: 8px; /* Standard curve */
     cursor: pointer;
     transition: opacity 0.2s ease;
 }
@@ -51,10 +53,127 @@ button:hover {
 }
 
 #output {
-    font-size: clamp(2rem, 10vw, 2.5rem); /* DOUBLED */
+    font-size: 1.1rem;
     margin-top: 2rem;
-    padding: 3rem; /* DOUBLED */
+    padding: 2rem;
     max-width: 500px;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.2);
-    backdrop-fi
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(40, 44, 52, 0.1);
+    line-height: 1.6;
+    
+    /* Strict hiding: JS will change this to 'block' */
+    display: none; 
+}
+
+.button-group {
+    margin-top: 1.5rem;
+    display: none; /* Strict hiding */
+    gap: 10px;
+    justify-content: center;
+}
+
+#generateAgain,
+#copyBtn {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #282C34;
+    border: 1.5px solid #282C34;
+    border-radius: 8px;
+    font-weight: 400;
+}
+
+#generateAgain:hover,
+#copyBtn:hover {
+    background-color: #282C34 !important;
+    color: #FFFFFF !important;
+}
+
+footer {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+}
+
+footer a {
+    color: #282C34 !important; /* Force Black/Dark Grey */
+    text-decoration: none;
+    font-weight: 700;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+}
+
+/* --- MOBILE ONLY OVERRIDES (The "Accessible" Version) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Double the font sizes for readability */
+    h1 {
+        font-size: 2.5rem; /* Big header */
+    }
+    
+    h2 {
+        font-size: 1rem; /* Readable sub-header */
+    }
+
+    #output {
+        font-size: 1.25rem; /* Very readable reply text */
+        padding: 2rem;
+        width: 90%; /* Take up more width on phone */
+    }
+
+    /* 2. Bigger, Curvier Buttons */
+    button {
+        font-size: 1.1rem;
+        padding: 16px 32px; /* Bigger touch target */
+        border-radius: 12px; /* More rounded to match size */
+        width: 100%; /* Full width buttons are easier to tap */
+        max-width: 300px;
+    }
+
+    /* 3. Button Group Stacking */
+    .button-group {
+        flex-direction: column; /* Stack buttons vertically on phone */
+        width: 100%;
+        align-items: center;
+    }
+
+    #generateAgain,
+    #copyBtn {
+        font-size: 1rem;
+        padding: 14px 24px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* 4. Fix Footer Overlap */
+    body {
+        padding-bottom: 120px; /* Huge padding so content doesn't hit footer */
+    }
+    
+    footer {
+        /* Keep it fixed but ensure background is readable */
+        background: rgba(255,255,255,0.8); 
+        padding: 10px 0;
+        bottom: 0;
+    }
+}
