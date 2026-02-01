@@ -46,7 +46,6 @@ button {
     border-radius: 8px;
     cursor: pointer;
     transition: opacity 0.2s ease;
-    margin-top: 2rem;
 }
 
 button:hover {
@@ -73,6 +72,10 @@ button:hover {
     display: none;
     gap: 10px;
     justify-content: center;
+}
+
+#generate {
+    margin-top: 2rem;
 }
 
 #generateAgain,
@@ -158,7 +161,6 @@ footer a {
         border-radius: 12px;
         width: 90%;
         max-width: 350px;
-        margin-top: 2rem;
     }
 
     .button-group {
@@ -175,6 +177,10 @@ footer a {
         width: 90%;
         max-width: 350px;
     }
+
+    #generate {
+    margin-top: 2rem;
+}
     
     footer {
         position: relative;
