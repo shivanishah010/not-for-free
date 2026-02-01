@@ -34,21 +34,24 @@ const messages = [
       const generateAgainBtn = document.getElementById("generateAgain");
 
       function displayNewReply() {
-        let randomIndex;
+  let randomIndex;
 
-        // Loop until we get a different index than the last one
-        do {
-          randomIndex = Math.floor(Math.random() * messages.length);
-        } while (randomIndex === lastIndex);
+  do {
+    randomIndex = Math.floor(Math.random() * messages.length);
+  } while (randomIndex === lastIndex);
 
-        lastIndex = randomIndex;
-        output.textContent = messages[randomIndex];
+  lastIndex = randomIndex;
+  output.textContent = messages[randomIndex];
 
-        // Hide the big initial button
-        mainBtn.style.display = "none";
-        // Show the group containing "Generate Another" and "Copy"
-        buttonGroup.style.display = "flex";
-      }
+  // 1. Force the output box to show
+  output.style.display = "block"; 
+
+  // 2. Hide the main start button
+  mainBtn.style.display = "none";
+  
+  // 3. Show the button group
+  buttonGroup.style.display = "flex";
+}
 
       // Both buttons now trigger the same logic
       mainBtn.addEventListener("click", displayNewReply);
